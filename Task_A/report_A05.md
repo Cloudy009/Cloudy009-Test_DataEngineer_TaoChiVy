@@ -33,6 +33,42 @@ title: real_time_streaming_data_pipeline
 ---
 </details>
 
+## Engineering Highlights
+---
+
+<details open>
+<summary>Key Contributions, Notes, and Design Insights</summary>
+---
+
+#### 🔧 Key Contributions
+- Designed and implemented an end-to-end real-time data pipeline using NiFi, Kafka, and Spark Streaming.
+- Developed NiFi flow to authenticate and extract data from AppsFlyer API with retry logic.
+- Built structured streaming jobs in PySpark to perform time-windowed aggregation and output results to Kafka and MongoDB.
+- Containerized the entire stack using Docker Compose for reproducibility and scalability on AWS EC2.
+- Developed interactive dashboards using Dash (Plotly) with auto-refresh for near real-time insights.
+- Optimized MongoDB schema for fast time-based queries by campaign and day/hour.
+- Ensured observability with NiFi bulletins, Kafka CLI monitoring, and Spark UI.
+- Documented full deployment steps, architecture diagram, and integration flows.
+---
+
+#### 📌 Additional Notes
+- Applied `InvokeHTTP` in NiFi with retry logic for AppsFlyer API call stability.
+- Configured Kafka topic retention to 24 hours to handle reprocessing needs.
+- Used Spark's `withWatermark()` and `window()` for out-of-order event handling.
+- Dash auto-refresh interval set to 30 seconds; can be changed via environment variable.
+---
+
+#### 💡 Design Considerations
+- Decoupled ingestion (NiFi → Kafka) and processing (Kafka → Spark) for better fault tolerance.
+- MongoDB schema normalized per time granularity (hour/day) to avoid scan overhead.
+- Used Docker named volumes to persist Kafka and MongoDB data across restarts.
+- Infrastructure is portable and repeatable with `docker-compose up`.
+---
+
+</details>
+
+
+
 ## Pipeline Architecture
 ---
 
@@ -197,6 +233,7 @@ title: real_time_streaming_data_pipeline
   Dash: http://<EC2_IP>:8050
   Mongo Express: http://<EC2_IP>:4141
 ---
+Full: [Environment Setup](./Configurations/environment_setup.md)
 
 </details>
 
@@ -298,6 +335,18 @@ FULL: ![Docker-compose](./docker-compose.yml)
 - **Spark Job Failure**: Use retry strategies or watchdog container restarts.
 - **Mongo Disk Usage**: Monitor collection size, set TTL indexes to auto-clean old data.
 ---
+
+</details>
+
+## 📚 Supplementary Information
+---
+
+<details open>
+<summary>Supplementary Files</summary>
+
+- **Docker Compose Setup**: [docker-compose.yml](./docker-compose.yml)  
+- **Environment Guide**: [AWS EC2 Setup](./Configurations/environment_setup.md)  
+- **Demo Video**: [YouTube](https://www.youtube.com/watch?v=O11hk6In59w)  
 
 </details>
 
