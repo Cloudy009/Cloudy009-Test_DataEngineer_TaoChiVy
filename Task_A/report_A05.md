@@ -337,7 +337,7 @@ FULL: ![Docker-compose](./docker-compose.yml)
 
 </details>
 
-## 📚 Supplementary Information
+## Supplementary Information
 ---
 
 <details open>
