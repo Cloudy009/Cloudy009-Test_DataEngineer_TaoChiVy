@@ -42,7 +42,7 @@ title: real_time_streaming_data_pipeline
 ---
 
 
-![Architecture Diagram](~/pictures/architecture.png)
+![Architecture Diagram](~/Pictures/architecture.png)
 
 ---
 </details>
