@@ -9,6 +9,7 @@ title: environment_setup
 ### AWS EC2 instance and security group creation
 <details - open>
 <summary>Configure EC2 instance and security group with SSH and port forwarding</summary>
+
 ---
 - Use a `t2.xlarge` instance type
 - Allocate at least `32GB` of storage
@@ -38,11 +39,13 @@ title: environment_setup
     scp -r -i "D:\Users\pyerravelly\Desktop\twitter_analysis.pem" D:\Users\pyerravelly\Downloads\spark-standalone-cluster-on-docker-master\build\docker\docker-exp ec2-user@ec2-34-208-254-29.us-west-2.compute.amazonaws.com:/home/ec2-user/docker_exp
     ```
 ---
+
 </details>
 
 ### Docker installation and running
 <details - open>
 <summary>Install Docker and Docker Compose on EC2 instance</summary>
+
 ---
 - Install Docker:
   ```bash
@@ -62,11 +65,13 @@ title: environment_setup
   sudo systemctl stop docker
   ```
 ---
+
 </details>
 
 ### Usage of docker-composer and starting all the tools
 <details - open>
 <summary>Access services locally and run Docker containers</summary>
+
 ---
 - List running containers:
   ```bash
@@ -81,4 +86,5 @@ title: environment_setup
   - Mongo Express: `http://localhost:4141/`
   - Jupyter Lab: `http://localhost:4888/lab?`
 ---
+
 </details>

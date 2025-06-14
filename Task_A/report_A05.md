@@ -8,29 +8,28 @@ title: real_time_streaming_data_pipeline
 ### Business Objective
 <details open>
 <summary>Provide real-time insights from marketing analytics</summary>
----
 
+---
 - Deliver up-to-date metrics from AppsFlyer campaigns to marketing teams.
 - Help answer: "Which campaigns drive installs right now?" and "What is today's app performance?"
 - Enable fast decision-making via aggregated hourly/daily data in dashboards.
-
 ---
+
 </details>
 
 ### Project Scope
 <details open>
 <summary>Scope of the end-to-end real-time system</summary>
+
 ---
-
-
 - Ingest data from AppsFlyer REST API via NiFi.
 - Stream processing pipeline: NiFi → Kafka → Spark Streaming.
 - Perform time-based aggregation of install and event data.
 - Store metrics in MongoDB for querying.
 - Visualize key KPIs via Dash (Plotly).
 - Containerized deployment on AWS EC2 using Docker Compose.
-
 ---
+
 </details>
 
 ## Engineering Highlights
@@ -38,9 +37,9 @@ title: real_time_streaming_data_pipeline
 
 <details open>
 <summary>Key Contributions, Notes, and Design Insights</summary>
----
 
-#### 🔧 Key Contributions
+---
+#### Key Contributions
 - Designed and implemented an end-to-end real-time data pipeline using NiFi, Kafka, and Spark Streaming.
 - Developed NiFi flow to authenticate and extract data from AppsFlyer API with retry logic.
 - Built structured streaming jobs in PySpark to perform time-windowed aggregation and output results to Kafka and MongoDB.
@@ -51,14 +50,14 @@ title: real_time_streaming_data_pipeline
 - Documented full deployment steps, architecture diagram, and integration flows.
 ---
 
-#### 📌 Additional Notes
+#### Additional Notes
 - Applied `InvokeHTTP` in NiFi with retry logic for AppsFlyer API call stability.
 - Configured Kafka topic retention to 24 hours to handle reprocessing needs.
 - Used Spark's `withWatermark()` and `window()` for out-of-order event handling.
 - Dash auto-refresh interval set to 30 seconds; can be changed via environment variable.
 ---
 
-#### 💡 Design Considerations
+#### Design Considerations
 - Decoupled ingestion (NiFi → Kafka) and processing (Kafka → Spark) for better fault tolerance.
 - MongoDB schema normalized per time granularity (hour/day) to avoid scan overhead.
 - Used Docker named volumes to persist Kafka and MongoDB data across restarts.
@@ -344,9 +343,11 @@ FULL: ![Docker-compose](./docker-compose.yml)
 <details open>
 <summary>Supplementary Files</summary>
 
+---
 - **Docker Compose Setup**: [docker-compose.yml](./docker-compose.yml)  
 - **Environment Guide**: [AWS EC2 Setup](./Configurations/environment_setup.md)  
 - **Demo Video**: [YouTube](https://www.youtube.com/watch?v=O11hk6In59w)  
+---
 
 </details>
 
