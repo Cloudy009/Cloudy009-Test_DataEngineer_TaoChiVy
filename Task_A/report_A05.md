@@ -354,7 +354,7 @@ FULL: ![Docker-compose](.Configurations/docker-compose.yml)
 <summary>Supplementary Files</summary>
 
 ---
-- **Docker Compose Setup**: [docker-compose.yml](./docker-compose.yml)  
+- **Docker Compose Setup**: [docker-compose.yml](./Configurations/docker-compose.yml)  
 - **Environment Guide**: [AWS EC2 Setup](./Configurations/environment_setup.md)  
 - **Demo Video**: [YouTube](https://www.youtube.com/watch?v=O11hk6In59w)  
 ---
