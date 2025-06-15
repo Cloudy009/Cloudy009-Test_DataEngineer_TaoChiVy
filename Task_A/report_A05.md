@@ -81,6 +81,16 @@ title: real_time_streaming_data_pipeline
 
 </details>
 
+### Data Flow Diagram
+<details open>
+<summary>ETL/Streaming flow from ingestion to dashboard</summary>
+
+---
+![Data Flow Diagram](./Pictures/MermaidChart.png)
+---
+
+</details>
+
 ### Technology Stack
 <details open>
 <summary>Component breakdown</summary>
@@ -278,7 +288,7 @@ services:
       retries: 3
   ...
 ```
-FULL: ![Docker-compose](./docker-compose.yml)
+FULL: ![Docker-compose](.Configurations/docker-compose.yml)
 ---
 
 </details>
