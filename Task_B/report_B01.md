@@ -8,10 +8,10 @@ This project provides a comprehensive learning resource for understanding, evalu
 This documentation is modular — each section is split into its own Markdown file for easier navigation, collaboration, and reuse.
 
 ---
-## 📂 Table of Contents
+## Table of Contents
 ---
 
-- [Overview](./components/compo./components/report_B01_overview.md)  
+- [Overview](./components/report_B01_overview.md)  
   _Project goals, scope, and intended audience._
 
 - [Concept Introduction](./components/report_B01_concepts.md)  
@@ -42,7 +42,7 @@ This documentation is modular — each section is split into its own Markdown fi
   _How Qdrant fits into Retrieval-Augmented Generation pipelines._
 
 ---
-## 🛠️ Usage Notes
+## Usage Notes
 ---
 
 <details open>
